@@ -2,6 +2,6 @@
 for i in range(9):
     for j in range(i+1, 9+1):
         if i != j and  i < 8:
-            print(str(i)+str(j), end=", ")
+            print("{:d}".format(i)+format(j), end=", ")
         else:
-            print(str(i)+str(j), end="\n")
+            print("{:d}".format(i)+format(j), end="\n")
