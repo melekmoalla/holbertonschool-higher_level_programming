@@ -1,6 +1,8 @@
 #!/bin/bash
+import sys
 import os
 import py_compile
 
 pyfile = os.environ.get("PYFILE")
 print("Compiling {} ...".format(pyfile))
+sys.exit(1)
