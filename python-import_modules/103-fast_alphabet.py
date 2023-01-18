@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-import builtins
-exec('print("ABCDEFGHIJKLMNOPQRSTUVWXYZ",end="\\n")')
+#!/usr/bin/python3
+print("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
