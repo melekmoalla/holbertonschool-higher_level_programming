@@ -1,11 +1,14 @@
 #!/usr/bin/python3
-from calculator_1 import add, sub, div, mul
 import sys
+
 if __name__ == '__main__':
     """
     add add,sub,div,mul
     """
-    if (len(sys.argv) - 1) != 3:
+    from calculator_1 import add, sub, div, mul
+    import sys
+
+    if (len(sys.argv) - 1) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
     a = int(sys.argv[1])
@@ -26,4 +29,3 @@ if __name__ == '__main__':
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-    
