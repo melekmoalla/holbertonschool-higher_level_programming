@@ -1,11 +1,7 @@
 #!/usr/bin/python3
-import marshal
-import dis
-
-def main():
-    with open("hidden_4.pyc", "rb") as f:
-        code = marshal.load(f)
-    dis.dis(code)
-
 if __name__ == "__main__":
-    main()
+    import hidden_4
+    for n in dir(hidden_4):
+        if n[:2] != "__":
+            continue
+        print("{}".format(n))
