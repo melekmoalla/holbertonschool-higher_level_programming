@@ -3,5 +3,9 @@ import os
 import py_compile
 
 pyfile = os.environ.get("PYFILE")
+sys.exit(1)
+if not pyfile:
+    raise ValueError("PYFILE environment variable not set.")
+
 print("Compiling {} ...".format(pyfile))
 py_compile.compile(pyfile, pyfile+"c")
