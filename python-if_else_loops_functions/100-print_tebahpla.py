@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+ #!/usr/bin/python3
 
 a=1
 for x in list(range(ord('z'), ord('a') - 1, -1)):
