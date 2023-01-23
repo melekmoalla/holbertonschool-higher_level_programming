@@ -7,5 +7,5 @@ def divisible_by_2(my_list=[]):
             a[i] = True
         else:
             a[i] = False
-    a=a[:len(my_list)]
+    a = a[:len(my_list)]
     return (a)
