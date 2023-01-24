@@ -2,5 +2,6 @@
 def multiply_list_map(my_list=[], number=0):
     list = []
     for i in my_list:
+        map
         list.append(i*4)
     return (list)
