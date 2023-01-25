@@ -3,7 +3,7 @@ def safe_print_integer_err(value):
     import sys
     if value == None:
         sys.stderr.write(
-            "Exception: None Value is not allowed \n")
+            "Exception: unsupported format string passed to NoneType.__format__\n")
         return False
     try:
         int(value)
@@ -19,7 +19,7 @@ def safe_print_integer_err(value):
             "Exception: Unknown format code 'd' for object of type 'str'\n")
         return False
     except TypeError:
-        print("Cannot operate on None Value")
+        print(" Exception: unsupported format string passed to set.__format__")
         return False
     except Exception:
         sys.stderr.write(
