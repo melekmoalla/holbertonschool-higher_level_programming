@@ -12,9 +12,12 @@ def safe_print_integer_err(value):
         return  False
     except ValueError:
         sys.stderr.write(
-            "Exception: Unknown format code 'd' for object of type str \n")
+            "Exception: Unknown format code 'd' for object of type 'str'\n")
         return False
+    except TypeError:
+        print("Cannot operate on None Value")
+        return  False
     except Exception:
         sys.stderr.write(
-            "Exception: unsupported format string passed to set.__format__  \n")
+            "Exception: unsupported format string passed to set.__format__\n")
         return  False
