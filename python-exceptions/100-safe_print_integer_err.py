@@ -19,7 +19,7 @@ def safe_print_integer_err(value):
             "Exception: Unknown format code 'd' for object of type 'str'\n")
         return False
     except TypeError:
-        print(" Exception: unsupported format string passed to set.__format__")
+        print("Exception: unsupported format string passed to set.__format__")
         return False
     except Exception:
         sys.stderr.write(
