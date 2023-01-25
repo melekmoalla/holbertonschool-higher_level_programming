@@ -38,3 +38,11 @@ Here is the complete list of projects in this repository, each project has its d
 * [python-more_data_structures ](https://github.com/melekmoalla/holbertonschool-higher_level_programming/tree/master/python-more_data_structures)
 
  # BUT I 'dont finish all project yet they are loading .
+
+ ## Usage
+
+Each project and task contains the instructions to compile the code and execute the results.
+
+## Author
+
+- https://github.com/melekmoalla
