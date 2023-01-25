@@ -24,5 +24,5 @@ def safe_print_integer_err(value):
             return False
     except Exception:
         sys.stderr.write(
-            "Exception: unsupported format string passed to set.__format__\n")
+            " Exception: unsupported format string passed to list.__format__\n")
         return False
