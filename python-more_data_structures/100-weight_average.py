@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
+    if my_list is []:
+        return my_list
     normalization = 0
     val = 0
     sum = 1
