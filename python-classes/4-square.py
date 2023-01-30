@@ -9,24 +9,29 @@ Attributes:
 
 class Square:
 
-    """
-    The constructor for Square class.
+    ''' create Square instance with public attributes
+    size and position '''
 
-    Parameters:
-        size (int): The size of a side of the square.
-
-    """
-
-    def __init__(self, size=0):
-        if not isinstance(size, int):
-            raise TypeError("size must be an integer")
-        if (size < 0):
-            raise ValueError("size must be >= 0")
+    def __init__(self, size=0, position=(0, 0)):
         self.size = size
 
-    def area(self):
-        if not isinstance(self.size, int):
+    ''' retrieve size and make it private'''
+
+    @property
+    def size(self):
+        return self.__size
+
+    ''' set private size attribute '''
+
+    @size.setter
+    def size(self, value):
+        if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if (self.size < 0):
+        if value < 0:
             raise ValueError("size must be >= 0")
-        return (self.size**2)
+        self.__size = value
+
+    ''' calculates area of square '''
+
+    def area(self):
+        return self.__size ** 2
