@@ -4,7 +4,8 @@ square.py:  which defines a squree class.
 """
 
 
-class Square(object):
+class Square:
+    
     def __init__(self, size):
         """Initializes the ize."""
         self._Square__size = size
