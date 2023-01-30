@@ -1,10 +1,18 @@
 #!/usr/bin/python3
-"""
-square.py:  which defines a squree class.
-"""
-
-
 class Square:
-    """Initializes the ize."""
-    def __init__(self, size):
-        self._Square__size = size
+    """
+    Defines a square object with a size.
+
+    Attributes:
+        __size (int): The size of a side of the square.
+    """
+
+    def __init__(self, size: int):
+        """
+        The constructor for Square class.
+
+        Parameters:
+            size (int): The size of a side of the square.
+
+        """
+        self.__size = size
