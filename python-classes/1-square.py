@@ -5,6 +5,8 @@ Defines a square object with a size.
 Attributes:
     __size (int): The size of a side of the square.
 """
+
+
 class Square:
 
     """
