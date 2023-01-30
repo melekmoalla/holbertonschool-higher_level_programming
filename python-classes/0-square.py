@@ -1,15 +1,6 @@
 #!/usr/bin/python3
-class Square:
-    """
-    Defines a square object with a side length.
+class Square:  # For Python 3 use: "class Square(object):"
 
-    Attributes:
-        side_length (int): The length of a side of the square.
-    """
-    pass
-    """
-    Defines a square object with a side length.
-
-    Attributes:
-        side_length (int): The length of a side of the square.
-    """
+    def Square():
+        """This function does nothing."""
+        pass
