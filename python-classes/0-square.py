@@ -1,4 +1,8 @@
 #!/usr/bin/python3
 class Square:
-    """This function does nothing."""
+    """
+    Defines a square object with a side length.
+
+    
+    """
     pass
