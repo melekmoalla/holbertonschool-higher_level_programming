@@ -13,8 +13,8 @@ class Square:
     size and position '''
 
     def __init__(self, size=0, position=(0, 0)):
-        self.__size = size   
-        self.__position = position 
+        self.size = size
+        self.position = position
 
     ''' retrieve size and make it private'''
 
@@ -22,13 +22,8 @@ class Square:
     def size(self):
         return self.__size
 
-
-    @property
-    def position(self):
-        return self.__position
-
     ''' set private size attribute '''
-    
+
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
@@ -37,12 +32,15 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    @property
+    def position(self):
+        return self.__position
+
     @position.setter
     def position(self, value):
-        if value[0] < 0 or value[1] < 0:
+        if type(value) != tuple or value[0] < 0 or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position[0] = value[0]
-        self.__position[1] = value[1]
+        self.__position = value
 
     ''' calculates area of square '''
 
@@ -53,14 +51,13 @@ class Square:
 
     def my_print(self):
         if self.__size == 0:
-            print()
+            print("m")
         else:
             for a in range(self.__position[1]):
-                print()
+                print("m")
             for i in range(self.__size):
                 for space in range(self.__position[0]):
                     print(" ", end="")
                 for j in range(self.__size):
                     print('#', end="")
                 print()
-
