@@ -6,6 +6,7 @@ Attributes:
     __size (int): The size of a side of the square.
 """
 
+
 class Square:
 
     """
