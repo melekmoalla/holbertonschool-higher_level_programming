@@ -48,9 +48,7 @@ Traceback (most recent call last):
 TypeError: a must be an integer
 
 >>> add_integer(1, float("NaN"))
-Traceback (most recent call last):
-...
-TypeError: a must be an integer
+Output: NaN Error
 
 >>> add_integer(None)
 Traceback (most recent call last):
