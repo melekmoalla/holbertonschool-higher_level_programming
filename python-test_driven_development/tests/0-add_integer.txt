@@ -30,7 +30,7 @@ Now use it:
 98
 
 >>> add_integer(2.22, 1.79)
-inf
+3
 
 >>> add_integer(4, "School")
 Traceback (most recent call last):
