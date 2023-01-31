@@ -34,6 +34,11 @@ Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 
+>>> add_integer(4, "a")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
 >>> add_integer("School", 4)
 Traceback (most recent call last):
 ...
