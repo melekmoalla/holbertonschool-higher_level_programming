@@ -29,7 +29,7 @@ Now use it:
 >>> add_integer(-2, 100.3)
 98
 
->>> add_numbers(1e308, 1e308))
+>>> add_numbers(1e308, 1e308)
 Overflow Error
 
 >>> add_integer(4, "School")
