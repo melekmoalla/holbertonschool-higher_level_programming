@@ -29,6 +29,9 @@ Now use it:
 >>> add_integer(-2, 100.3)
 98
 
+>>> add_integer(100.3, 100.3)
+200
+
 >>> add_integer(4, "School")
 Traceback (most recent call last):
 ...
