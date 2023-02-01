@@ -24,6 +24,7 @@ def text_indentation(text):
         raise TypeError("text must be a string")
     for i in text:
         if (i == "?" or i == "." or i == ":"):
+            print(i)
             print('\n')
         else:
             print(i,end="")
