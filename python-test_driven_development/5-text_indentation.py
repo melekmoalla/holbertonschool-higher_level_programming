@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    * function that prints a text with 2 new lines after each 
+    * function that prints a text with 2 new lines after each
      of these characters: ., ? and :
     * Prototype: def text_indentation(text):
     * text must be a string, otherwise raise a TypeError
@@ -12,7 +12,7 @@
 
 def text_indentation(text):
     """
-    * function that prints a text with 2 new lines after each 
+    * function that prints a text with 2 new lines after each
      of these characters: ., ? and :
     * Prototype: def text_indentation(text):
     * text must be a string, otherwise raise a TypeError
