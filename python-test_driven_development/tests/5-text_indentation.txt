@@ -22,5 +22,5 @@ melek
 
 >>> text_indentation("melek. melek")
 melek.
-
+<BLANKLINE>
 melek
