@@ -17,7 +17,7 @@ Traceback (most recent call last):
 ...
 TypeError: text_indentation() missing 1 required positional argument: 'text'
 
->>> text_indentation("melek"):
+>>> text_indentation("melek")
 melek
 
 >>> text_indentation("melek. melek")
