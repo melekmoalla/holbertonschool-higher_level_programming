@@ -16,10 +16,12 @@ class Rectangle that defines a rectangle
      with the message height must be >= 0
 
 """
+
+
 class Rectangle:
 
     """
-    - Instantiation with optional width and height: 
+    - Instantiation with optional width and height:
     def __init__(self, width=0, height=0):
     """
     def __init__(self, width=0, height=0):
