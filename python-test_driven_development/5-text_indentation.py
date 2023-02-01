@@ -20,7 +20,7 @@ def text_indentation(text):
     * There should be no space at the beginning or at the end
      of each printed line
     """
-    if isinstance(text, str):
+    if not isinstance(text, str):
         raise TypeError("text must be a string")
     for i in text:
         if (i == "?" or i == "." or i == ":"):
