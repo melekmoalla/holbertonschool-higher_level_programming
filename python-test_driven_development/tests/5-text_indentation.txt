@@ -8,8 +8,6 @@ First import ``text_indentation``
 Now use it:
 
 text_indentation(5):
-Traceback (most recent call last):
-...
 TypeError: text must be a string
 
 text_indentation():

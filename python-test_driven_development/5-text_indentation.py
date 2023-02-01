@@ -22,7 +22,7 @@ def text_indentation(text):
     """
 
     a = 0
-    if not isinstance(text, str):
+    if type(text) is not str:
         raise TypeError("text must be a string")
     for i in text:
         if (i == "?" or i == "." or i == ":"):
