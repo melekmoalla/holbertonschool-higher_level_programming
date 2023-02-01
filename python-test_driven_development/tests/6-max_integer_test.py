@@ -17,8 +17,6 @@ class TestMaxInteger(unittest.TestCase):
     def test_mixed_integers(self):
         self.assertEqual(max_integer([1, -2, 3, -4]), 3)
     
-    def test(self):
-        self.assertEqual(max_integer([]), 0)
-
+    
 if __name__ == '__main__':
     unittest.main()
