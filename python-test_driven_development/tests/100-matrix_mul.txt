@@ -20,8 +20,8 @@ Traceback (most recent call last):
 ...
 TypeError: m_a must be a list of lists
 
->>> matrix_mul([[1, 2]], [[1, 2], [3, 4]])
+>>> matrix_mul([[1, 2]], [[1, 2]])
 Traceback (most recent call last):
 ...
-TypeError: m_a and m_b can't be multiplied
+ValueError: m_a and m_b can't be multiplied
 
