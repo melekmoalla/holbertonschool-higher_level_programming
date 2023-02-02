@@ -15,7 +15,7 @@ Traceback (most recent call last):
 ...
 TypeError: m_a must be a list
 
->>> matrix_mul([[1, 2], m], 5,5)
+>>> matrix_mul([1, 2], [])
 Traceback (most recent call last):
 ...
 TypeError: m_a must be a list of lists
