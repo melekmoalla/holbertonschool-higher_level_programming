@@ -71,7 +71,7 @@ class Rectangle:
             return ("")
         for z in range(self.height - 1):
             print(str(self.print_symbol) * self.__width)
-        return str(self.print_symbol * self.__width)
+        return (str(self.print_symbol) * self.__width)
 
     def __str__(self):
         """prints a rectangle using '#'"""
