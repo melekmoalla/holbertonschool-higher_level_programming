@@ -10,7 +10,7 @@ Now use it:
 >>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 [[7, 10], [15, 22]]
 
->>> matrix_mul([[1, 2], [3, 4]], [4,5])
+>>> matrix_mul([1, 2], [4,5])
 Traceback (most recent call last):
 ...
 TypeError: m_a must be a list
