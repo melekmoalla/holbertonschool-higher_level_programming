@@ -21,6 +21,7 @@ Traceback (most recent call last):
 ...
 ValueError: m_a and m_b can't be multiplied
 
+
 >>> matrix_mul()
 Traceback (most recent call last):
 ...
@@ -31,3 +32,31 @@ TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
 Traceback (most recent call last):
 ...
 TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> m_a = [[], [3, 4], [3, 4]]
+>>> m_b = [[5, 6, 1], [7, 8, 2]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+ValueError: m_a can't be empty
+
+>>> m_b = [[], [3, 4], [3, 4]]
+>>> m_a = [[5, 6, 1], [7, 8, 2]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+ValueError: m_b can't be empty
+
+>>> m_b = [{}, [3, 4], [3, 4]]
+>>> m_a = [[5, 6, 1], [7, 8, 2]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_b must be a list of lists
+
+>>> m_a = [{}, [3, 4], [3, 4]]
+>>> m_b = [[5, 6, 1], [7, 8, 2]]
+>>> print(matrix_mul(m_a, m_b))
+Traceback (most recent call last):
+...
+TypeError: m_a must be a list of lists
