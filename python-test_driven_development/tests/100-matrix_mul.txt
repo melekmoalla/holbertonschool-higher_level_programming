@@ -1,0 +1,9 @@
+using ``100-matrix_mul``
+--------------------------
+
+First ``100-matrix_mul``
+
+    >>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Now use it:
+
