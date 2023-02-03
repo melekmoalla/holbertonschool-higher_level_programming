@@ -7,7 +7,7 @@ First ```101-lazy_matrix_mul```
 
 Now use it:
 
->>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 [[7, 10], [15, 22]]
 
 
