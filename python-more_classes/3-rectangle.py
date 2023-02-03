@@ -61,13 +61,11 @@ class Rectangle:
             return (0)
         return (2 * (self.__width + self.__height))
 
-    def print(self):
-        height = self.__height
-        width = self.__width
-        if (height == 0 or width == 0):
-            return ("")
-        return '\n'.join('#' * width for _ in range(height))
-
     def __str__(self):
-        """prints a rectangle using '#'"""
-        return f"{self.print()}"
+        if (self.__height == 0 or self.__width == 0):
+            return ("")
+        for i in range(self.__height):
+            for m in range(self.__width):
+                print("#", end="")
+            print()
+        return ("")
