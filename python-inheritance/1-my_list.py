@@ -2,6 +2,8 @@
 """
 class MyList that inherits from list
 """
+
+
 class MyList(list):
     """
     Public instance method: def print_sorted(self):
@@ -9,5 +11,3 @@ class MyList(list):
     """
     def print_sorted(self):
         print(sorted(self))
-
-
