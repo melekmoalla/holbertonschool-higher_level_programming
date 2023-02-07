@@ -27,14 +27,10 @@ class BaseGeometry:
         if value <= 0:
             raise ValueError(f"{name} must be greater than 0")
 
-class Rectangle:
-    """
-    Instantiation with width and height: 
+
+class Rectangle(BaseGeometry):
     def __init__(self, width, height):
-    """
-    def __init__(self, width, height):
-        self._width = width
-        if (type(height) is not int):
-            raise TypeError("height must be an integer")
-        self._height = height
-        
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
