@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Write a class Square that inherits from Rectangle 
+Write a class Square that inherits from Rectangle
 (9-rectangle.py). (task based on 10-square.py).
 """
 Rectangle = __import__('9-rectangle').Rectangle
@@ -20,7 +20,6 @@ class Square(Rectangle):
             raise TypeError("size must be an integer")
         if (size <= 0):
             raise ValueError("size must be greater than 0")
-        
         self.__size = size
 
     def area(self):
