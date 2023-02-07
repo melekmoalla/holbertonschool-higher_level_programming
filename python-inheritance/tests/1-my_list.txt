@@ -1,7 +1,7 @@
 using ``print_sorted``
 ---------------------
 
-Firs import ``print_sorted``
+First import ``print_sorted``
 
 >>> MyList = __import__('1-my_list').MyList
 
