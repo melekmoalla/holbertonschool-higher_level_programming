@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-Write a function that writes an Object to a text file,
- using a JSON representation:
+Write a function that writes an Object to a text file, using a JSON representation:
 """
 
 
@@ -14,6 +13,7 @@ def save_to_json_file(my_obj, filename):
     * You don’t need to manage file permission exceptions.
     """
     import json
-    dump = json.dumps(my_obj)
+    import os
+    os.path.isfile(filename)
     with open(filename, "w") as f:
-        f.write(dump)
+        json.dump(my_obj, f)
