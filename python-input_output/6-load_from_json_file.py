@@ -13,4 +13,5 @@ def load_from_json_file(filename):
     * You don’t need to manage file permissions / exceptions.
     """
     import json
-    return (json.loads(filename))
+    with open(filename, 'r') as f:
+        return (json.load(f))
