@@ -5,6 +5,7 @@ Write a function that returns the dictionary description
  integer and boolean) for JSON serialization of an object:
 """
 
+
 def class_to_json(obj):
     """
     * Prototype: def class_to_json(obj):
