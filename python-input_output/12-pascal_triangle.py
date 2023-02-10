@@ -25,4 +25,4 @@ def pascal_triangle(n):
                 row.append(listt[i-1][j-1] + listt[i-1][j])
             row.append(1)
             listt.append(row)
-    return listt
+    return list
