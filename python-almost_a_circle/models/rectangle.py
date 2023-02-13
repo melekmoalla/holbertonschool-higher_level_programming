@@ -29,27 +29,31 @@ class Rectangle(Base):
         self.__y = y
         self.__width = width
         self.__height = height
-    """
-    get_x : getter
-    """
+    
 
     def get_x(self):
+        """
+        get_x : getter
+        """
         return (self._x)
-    """
-    set_x: setter
-    """
+
 
     def set_x(self, value):
+        """
+        set_x: setter
+        """
         self._x = value
-    """
-    get_y : getter
-    """
+    
 
     def get_y(self):
+        """
+        get_y : getter
+        """
         return (self, _y)
-    """
-    setter_y : setter
-    """
+    
 
     def set_y(self, value):
+        """
+        setter_y : setter
+        """
         self._y = value
