@@ -93,12 +93,16 @@ class Rectangle(Base):
 
     def display(self):
         """
-        he public method def display(self):
-        that prints in stdout the Rectangle instance
-        with the character #
-        - you don’t need to handle x and y here.
+        * the public method def display(self):
+        to print in stdout the Rectangle instance with
+         the character # by taking care of x and y
+
         """
+        for o in range(self.y):
+            print()
         for i in range(self.height):
+            for b in range(self.x):
+                print(" ", end="")
             for a in range(self.width):
                 print("#", end="")
             print()
