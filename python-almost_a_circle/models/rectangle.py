@@ -31,12 +31,18 @@ class Rectangle(Base):
         self.y = y
 
     def _validate_integer_1(self, name, value):
+        """
+        verification for the value if is int and possitive
+        """
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
             raise ValueError(f"{name} must be > 0")
 
     def _validate_integer_2(self, name, value):
+        """
+        verification for the value if is int and possitive
+        """
         if not isinstance(value, int):
             raise TypeError(f"{name} must be an integer")
         if value < 0:
