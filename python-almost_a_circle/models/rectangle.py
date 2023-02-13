@@ -83,3 +83,6 @@ class Rectangle(Base):
     def y(self, value):
         self._validate_integer_2("y", value)
         self.__y = value
+
+    def area(self):
+        return (self.height*self.width)
