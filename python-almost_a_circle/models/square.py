@@ -14,7 +14,8 @@ class Square(Rectangle):
      super call will use the logic of the __init__ of the Rectangle
     class. The width and height must be assigned to the value of size
     * You must not create new attributes for this class, use all attributes
-    of Rectangle - As reminder: a Square is a Rectangle with the same width and height
+    of Rectangle - As reminder: a Square is a Rectangle with the same
+    width and height
     * All width, height, x and y validation must inherit
     from Rectangle - same behavior in case of wrong data
     * The overloading __str__ method should return
@@ -25,4 +26,5 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.width)
