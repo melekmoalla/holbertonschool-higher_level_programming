@@ -114,27 +114,30 @@ class Rectangle(Base):
                                                     self.y, p, m)
         return (a)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
-        the public method def update(self, *args):
-        that assigns an argument to each attribute:
+        * the prototype to update(self, *args, **kwargs)
+        that assigns a key/value argument to attributes:
 
-            -   1st argument should be the id attribute
-            -   2nd argument should be the width attribute
-            -   3rd argument should be the height attribute
-            -   4th argument should be the x attribute
-            -   5th argument should be the y attribute
+            - **kwargs can be thought of as a double
+            pointer to a dictionary: key/value
+            - As Python doesn’t have pointers,
+            **kwargs is not literally a double pointer
+            – describing it as such is just a way of explaining
+            its behavior in terms you’re already familiar with
+            -   **kwargs must be skipped if *args exists and is not empty
+            - Each key in this dictionary represents an
+            attribute to the instance
         """
         a = 0
-        for arg in args:
-            if (a == 0):
-                self.id = arg
-            if (a == 1):
-                self.width = arg
-            if (a == 2):
-                self.height = arg
-            if (a == 3):
-                self.x = arg
-            if (a == 4):
-                self.y = arg
-            a += 1
+        for arg in kwargs:
+            if (arg == 'id'):
+                self.id = kwargs[arg]
+            if (arg == 'width'):
+                self.width = kwargs[arg]
+            if (arg == 'height'):
+                self.height = kwargs[arg]
+            if (arg == 'x'):
+                self.x = kwargs[arg]
+            if (arg == 'y'):
+                self.y = kwargs[arg]
