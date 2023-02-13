@@ -89,4 +89,4 @@ class Rectangle(Base):
         the public method def area(self):
          that returns the area value of the Rectangle instance.
         """
-        return (self.height*self.width)
+        return (self.__height*self.__width)
