@@ -2,8 +2,6 @@
 """
 Write the class Rectangle that inherits from Base:
 """
-from models.base import Base
-
 
 class Rectangle(Base):
     """
@@ -22,6 +20,7 @@ class Rectangle(Base):
     Assign each argument width, height, x and y to
      the right attribute
     """
+    from models.base import Base
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
@@ -37,7 +36,7 @@ class Rectangle(Base):
         self._x = value
 
     def get_y(self):
-        return (self, y)
+        return (self, _y)
 
     def set_y(self, value):
         self._y = value
