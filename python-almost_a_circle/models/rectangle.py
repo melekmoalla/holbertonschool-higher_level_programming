@@ -25,10 +25,10 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     def _validate_integer_1(self, name, value):
         """
@@ -162,3 +162,18 @@ class Rectangle(Base):
             if (a == 4):
                 self.y = arg
             a += 1
+
+    def to_dictionary(self):
+        """
+        * adding the public method def to_dictionary(self):
+        that returns the dictionary representation of a Rectangle:
+
+        - This dictionary must contain:
+
+            -  id
+            - width
+            - height
+            - x
+            - y
+        """
+        return (self.__dict__)
