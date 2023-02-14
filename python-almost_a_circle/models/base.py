@@ -57,8 +57,9 @@ class Base:
             -You must use the static method to_json_string (created before)
             -You must overwrite the file if it already exists
         """
-
-        filname = type(list_objs[0]).__name__+".json"
+        if list_objs is None:
+            list_objs = []
+        filname = cls.__name__+".json"
         with open(filname, "w") as f:
             listt = []
             for i in (list_objs):
