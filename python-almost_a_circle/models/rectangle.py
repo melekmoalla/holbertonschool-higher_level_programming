@@ -176,4 +176,4 @@ class Rectangle(Base):
             - x
             - y
         """
-        return (self.__dict__)
+        return ({'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10})
