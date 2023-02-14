@@ -96,7 +96,6 @@ class Rectangle(Base):
         * the public method def display(self):
         to print in stdout the Rectangle instance with
          the character # by taking care of x and y
-
         """
         for o in range(self.y):
             print()
@@ -118,7 +117,6 @@ class Rectangle(Base):
         """
         the public method def update(self, *args):
         that assigns an argument to each attribute:
-
             -1st argument should be the id attribute
             - 2nd argument should be the width attribute
             - 3rd argument should be the height attribute
@@ -127,7 +125,6 @@ class Rectangle(Base):
             --------------------------------------------
         * the prototype to update(self, *args, **kwargs)
         that assigns a key/value argument to attributes:
-
             - **kwargs can be thought of as a double
             pointer to a dictionary: key/value
             - As Python doesn’t have pointers,
@@ -167,9 +164,7 @@ class Rectangle(Base):
         """
         * adding the public method def to_dictionary(self):
         that returns the dictionary representation of a Rectangle:
-
         - This dictionary must contain:
-
             -  id
             - width
             - height
