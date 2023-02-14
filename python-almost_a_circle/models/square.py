@@ -79,3 +79,17 @@ class Square(Rectangle):
             self.size = values['size']
             self.x = values['x']
             self.y = values['y']
+
+    def to_dictionary(self):
+        """
+        * the public method def to_dictionary(self):
+        that returns the dictionary representation of a Square:
+
+            - This dictionary must contain:
+
+            - id
+            - size
+            - x
+            - y
+        """
+        return ({'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y})
