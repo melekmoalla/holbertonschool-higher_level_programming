@@ -77,5 +77,7 @@ class Base:
             -json_string is a string representing a list of dictionaries
             -If json_string is None or empty, return an empty list
             -Otherwise, return the list represented by json_string
-"""
+        """
+        if (json_string is None):
+            return([])
         return (json.loads(json_string))
