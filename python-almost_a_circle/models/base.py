@@ -3,6 +3,7 @@
 Write the first class Base
 """
 import json
+import os
 
 
 class Base:
@@ -117,11 +118,15 @@ class Base:
         * You must use the from_json_string and create methods
         (implemented previously)
         """
+
         p = 0
         if (p == 1):
             cls.from_json_string()
             cls.create()
         filname = cls.__name__+".json"
+        m = os.path.exists(filname)
+        if (m is False):
+            return ([])
         with open(filname, "r") as f:
             m = json.load(f)
             a = []
