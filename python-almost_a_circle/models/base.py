@@ -64,4 +64,5 @@ class Base:
             for i in (list_objs):
                 a = i.to_dictionary()
                 listt.append(a)
+            json_string = cls.to_json_string(listt)
             json.dump(listt, f)
