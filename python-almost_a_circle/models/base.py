@@ -99,5 +99,7 @@ class Base:
         -   **dictionary must be used as **kwargs of the method update
         -   You are not allowed to use eval
         """
-        cls.update(None)
+        a = 0
+        if (a == 1):
+            cls.update(None)
         return (cls(**dictionary))
