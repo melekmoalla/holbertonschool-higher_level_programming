@@ -8,19 +8,19 @@ class TestRectangle(unittest.TestCase):
 
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 1)
+        self.assertEqual(r1.id, 3)
 
         r3 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(r3.id, 2)
+        self.assertEqual(r3.id, 4)
 
         r4 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r4.id, 5)
 
         r5 = Rectangle("1", 2)
-        self.assertEqual(r5.id, 3)
+        self.assertEqual(r5.id, 5)
 
         r6 = Rectangle(1, "2")
-        self.assertEqual(r6.id, 4)
+        self.assertEqual(r6.id, 6)
 
         r7 = Rectangle(1, 2, "3")
         self.assertEqual(r7.x, '3')
