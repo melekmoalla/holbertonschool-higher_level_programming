@@ -29,3 +29,6 @@ class TestBase(unittest.TestCase):
     def test_from_json_string(self):
         list_output = Base.from_json_string(None)
         self.assertEqual(list_output, [])
+
+if __name__ == '__main__':
+    unittest.main()

@@ -30,3 +30,6 @@ class TestRectangle(unittest.TestCase):
 
         r9 = Rectangle(-1, 2)
         self.assertEqual(r9.width, -1)
+
+if __name__ == '__main__':
+    unittest.main()
