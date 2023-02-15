@@ -17,7 +17,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r4.id, 5)
 
         r5 = Rectangle("1", 2)
-        self.assertEqual(r5.id, 5)
+        self.assertEqual(r5.width, '1')
 
         r6 = Rectangle(1, "2")
         self.assertEqual(r6.height, '2')
@@ -35,7 +35,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r10.width, 0)
 
         r11 = Rectangle(1, 0)
-        self.assertEqual(r11.width, 1)
+        self.assertEqual(r11.height, 0)
 
 
 if __name__ == '__main__':
