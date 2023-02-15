@@ -3,8 +3,10 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    def test_auto_id(self):
-        """Test that new instances of Base have a unique ID assigned automatically"""
+    def test_constructor_no_id(self):
+        """Test that the Base constructor sets id attribute
+        to the expected value when no id is passed as argument.
+        """
         b1 = Base()
         b2 = Base()
         b3 = Base()
@@ -12,10 +14,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 3)
 
-    def test_saving_the_ID_passed_exists(self):
-        b1 = Base(89)
-        self.assertEqual(b1.id, 89)
-
-
-if __name__ == '__main__':
-    unittest.main()
+    def test_constructor_with_id(self):
+        """Test that the Base constructor sets id attribute
+        to the expected value when an id is passed as argument.
+        """
+        b1 = Base(10)
+        b2 = Base(20)
+        b3 = Base(30)
+        self.assertEqual(b1.id, 10)
+        self.assertEqual(b2.id, 20)
+        self.assertEqual(b3.id, 30)
