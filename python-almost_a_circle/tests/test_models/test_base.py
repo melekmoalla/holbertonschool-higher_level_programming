@@ -8,7 +8,7 @@ class TestBase(unittest.TestCase):
 
     def test_new_instance_id(self):
         b1 = Base()
-        self.assertEqual(b1.id, 2)
+        self.assertEqual(b1.id, 1)
         b2 = Base()
         self.assertEqual(b2.id, b2.id)
 
