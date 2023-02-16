@@ -8,11 +8,10 @@ import sys
 
 class TestRectangle(unittest.TestCase):
 
-    a = 0
     r = Rectangle(2, 3)
     r.display()
 
-    def test_display(self):
+    def test_display_exist(self):
         r = Rectangle(2, 3)
         r.display()
         self.assertEqual(r.display(), None)
