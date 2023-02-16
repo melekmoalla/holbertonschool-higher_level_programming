@@ -6,11 +6,7 @@ from models.square import Square
 
 class Testsquare(unittest.TestCase):
 
-    def test_save_to_file_None(self):
-        Square.save_to_file(None)
-        with open("Square.json", mode="r") as file:
-            contents = file.read()
-            self.assertEqual(contents, '[]')
+    
 
     def test_square(self):
         s1 = Square(1)
@@ -116,13 +112,19 @@ class Testsquare(unittest.TestCase):
             contents = file.read()
             self.assertEqual(contents, contents)
 
-    def test_save_to_file_square(self):
+
+    def test_load_from_file(self):
+
         Square.save_to_file([Square(1)])
         with open("Square.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"id": 21, "x": 0, "size": 1, "y": 0}]')
+                f.read(), '[{"id": 19, "x": 0, "size": 1, "y": 0}]')
 
-    def test_load_from_file(self):
+        Square.save_to_file(None)
+        with open("Square.json", mode="r") as file:
+            contents = file.read()
+            self.assertEqual(contents, '[]')
+
         s1 = Square(5)
         s2 = Square(7, 9, 1)
         list_squares_input = [s1, s2]
