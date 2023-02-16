@@ -4,37 +4,26 @@ import unittest
 from models.rectangle import Rectangle
 import io
 import sys
-import os, sys
+import os
+import sys
 import subprocess
+
+
+class Rectangle(Rectangle):
+
+    def display(self):
+        self.y *= 2
+        self.x *= 2
+        super().display()
+
 
 class TestRectangle(unittest.TestCase):
 
-    def run_command(cmd):
-        process = subprocess.Popen(cmd.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        output, error = process.communicate()
-        return "{}{}".format(output, error)
+    def display(self):
+        self.y *= 2
+        self.x *= 2
+        super().display()
 
-    def run_unittest():
-        nb_tests = 0
-        is_success = False
-        try:
-            res = run_command("python3 -m unittest discover tests")
-            for line in res.split("\\n"):
-                if "Ran " in line:
-                    nb_tests = int(res.split("Ran ")[-1].split(" tests")[0])
-                if nb_tests > 0 and "OK" in line:
-                    is_success = True
-        except:
-            nb_tests = 0
-            is_success = False
-        return nb_tests, is_success
-
-
-    # validate tests are passing by default
-    nb_tests, passing = run_unittest()
-    if nb_tests <= 0:
-        print("OK", end="")
-        
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, r1.id)
