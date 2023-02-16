@@ -119,7 +119,7 @@ class Testsquare(unittest.TestCase):
         Square.save_to_file([Square(1)])
         with open("Square.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"id": 23, "x": 0, "size": 1, "y": 0}]')
+                f.read(), '[{"id": 24, "x": 0, "size": 1, "y": 0}]')
 
         Square.save_to_file(None)
         with open("Square.json", mode="r") as file:
@@ -147,3 +147,8 @@ class Testsquare(unittest.TestCase):
         s1 = Square(10, 2, 1, 9)
         expected_output = {'id': 9, 'size': 10, 'x': 2, 'y': 1}
         self.assertDictEqual(s1.to_dictionary(), expected_output)
+
+    def test_display_exit(self):
+        r = Square(2, 3)
+        r.display()
+        self.assertEqual(r.display(), None)
