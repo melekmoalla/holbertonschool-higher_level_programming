@@ -122,7 +122,7 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"x": 0, "y": 0, "id": 13, "height": 2, "width": 1}]')
+                f.read(), '[{"x": 0, "y": 0, "id": 12, "height": 2, "width": 1}]')
 
     def test_load_from_to_life(self):
         r61 = Rectangle(10, 7, 2, 8)
@@ -147,8 +147,13 @@ class TestRectangle(unittest.TestCase):
         m = r200.display()
         self.assertEqual(m, None)
 
+    def test_display_method_exists(self):
+        rect = Rectangle(2, 3, 1, 1, 5)
+        self.assertTrue(hasattr(rect, 'display'))
+        
     def test_display_exist(self):
 
+        
         with self.assertRaises(TypeError) as e:
             Rectangle.display()
         self.assertEqual(str(e.exception), str(e.exception))
@@ -156,9 +161,6 @@ class TestRectangle(unittest.TestCase):
         r1 = Rectangle(4, 6)
         r1.display()
         self.assertEqual(str(r1), "[Rectangle] (4) 0/0 - 4/6")
-
-        r = Rectangle(1, 1)
-        self.assertTrue(hasattr(r, 'display'))
 
         my_object = Rectangle(5, 4)
         expected_output = None
