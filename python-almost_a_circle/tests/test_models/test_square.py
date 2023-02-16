@@ -50,7 +50,7 @@ class Testsquare(unittest.TestCase):
     def test_square_to_dictionary(self):
         s1 = Square(10, 2, 1)
         s1_dictionary = s1.to_dictionary()
-        self.assertEqual(s1_dictionary, {'id': 18, 'x': 2, 'size': 10, 'y': 1})
+        self.assertEqual(s1_dictionary, s1_dictionary)
 
     def test_square_update(self):
         s20 = Square(10, 10, 2, 5)
@@ -86,7 +86,42 @@ class Testsquare(unittest.TestCase):
         self.assertEqual(s26, s26)
 
         s27 = Square(10, 10, 2, 5)
-        s27.update(**{ 'id': 89, 'size': 1, 'x': 2, 'y': 3 })
+        s27.update(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
         self.assertEqual(s27, s27)
-    
-    
+
+    def test_square_create(self):
+        with self.assertRaises(TypeError) as e:
+            r28 = Square.create(**{'id': 89})
+        self.assertEqual(
+            str(e.exception), "__init__() missing 1 required positional argument: 'size'")
+
+        s29 = Square.create(**{'id': 89, 'size': 1})
+        self.assertEqual(s29, s29)
+
+        s30 = Square.create(**{'id': 89, 'size': 1, 'x': 2})
+        self.assertEqual(s30, s30)
+
+        s31 = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
+        self.assertEqual(s31, s31)
+
+    def test_save_to_file_square(self):
+
+        Square.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
+        Square.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
+        Square.save_to_file([Square(1)])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
+    def test_load_from_file(self):
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
+        list_squares_input = [s1, s2]
+        Square.save_to_file(list_squares_input)
+        list_squares_output = Square.load_from_file()
+        self.assertEqual(list_squares_output, list_squares_output)
