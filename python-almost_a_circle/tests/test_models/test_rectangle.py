@@ -83,6 +83,26 @@ class TestRectangle(unittest.TestCase):
         s20.update(89, 1, 2, 3, 4)
         self.assertEqual(s20.y, 4)
 
+    def test_creat(self):
+        with self.assertRaises(TypeError) as e:
+            r2 = Rectangle.create(**{'id': 89})
+        self.assertEqual(str(
+            e.exception), "__init__() missing 2 required positional arguments: 'width' and 'height'")
+
+        with self.assertRaises(TypeError) as e:
+            r2 = Rectangle.create(**{'id': 89, 'width': 1})
+        self.assertEqual(str(
+            e.exception), "__init__() missing 1 required positional argument: 'height'")
+
+        r3 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(print(r3), None)
+
+        r4 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(print(r4), None)
+
+        r5 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
+        self.assertEqual(print(r5), None)
+
 
 if __name__ == '__main__':
     unittest.main()
