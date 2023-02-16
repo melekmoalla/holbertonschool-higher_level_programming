@@ -147,7 +147,7 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         with self.assertRaises(TypeError) as e:
             r = Rectangle()
-            r.display()
+            r.display(12, 12)
         self.assertEqual(str(e.exception), str(e.exception))
 
     def test_display_exit(self):
