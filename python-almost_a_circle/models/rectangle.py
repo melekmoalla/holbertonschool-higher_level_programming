@@ -24,8 +24,8 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        self._validate_integer_1("height", height)
         self._validate_integer_1("width", width)
+        self._validate_integer_1("height", height)
         self._validate_integer_2("x", x)
         self._validate_integer_2("y", y)
         super().__init__(id)
