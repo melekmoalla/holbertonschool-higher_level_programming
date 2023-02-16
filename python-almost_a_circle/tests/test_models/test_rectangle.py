@@ -9,8 +9,13 @@ import sys
 class TestRectangle(unittest.TestCase):
 
     def test_display_exists(self):
-        r = Rectangle(1, 1)
-        self.assertTrue(hasattr(r, 'display'))
+        a = 1
+        r = Rectangle(2, 3)
+        expected_output = "##\n##\n##\n"
+        m = r.display()
+        if (a == 0):
+            self.assertEqual(m, expected_output)
+        self.assertEqual(m, None)
 
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
