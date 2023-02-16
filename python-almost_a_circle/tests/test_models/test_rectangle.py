@@ -9,20 +9,7 @@ import sys
 import subprocess
 
 
-class Rectangle(Rectangle):
-
-    def display(self):
-        self.y *= 2
-        self.x *= 2
-        super().display()
-
-
 class TestRectangle(unittest.TestCase):
-
-    def display(self):
-        self.y *= 2
-        self.x *= 2
-        super().display()
 
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
@@ -161,6 +148,13 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(m, None)
 
     def test_display_exist(self):
+
+        with self.assertRaises(AttributeError) as e:
+            self.y *= 2
+            self.x *= 2
+            super().display()
+        self.assertEqual(str(e.exception), str(e.exception))
+
         r1 = Rectangle(4, 6)
         r1.display()
         self.assertEqual(str(r1), "[Rectangle] (4) 0/0 - 4/6")
