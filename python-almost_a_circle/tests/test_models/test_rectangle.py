@@ -8,14 +8,7 @@ import sys
 
 class TestRectangle(unittest.TestCase):
 
-    def test_display_exists(self):
-        a = 1
-        r = Rectangle(2, 3)
-        expected_output = "##\n##\n##\n"
-        m = r.display()
-        if (a == 0):
-            self.assertEqual(m, expected_output)
-        self.assertEqual(m, None)
+        
 
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
@@ -148,18 +141,25 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(2, 4, 1, 1, 10)
         self.assertEqual(str(r), "[Rectangle] (10) 1/1 - 2/4")
 
-    def test_display(self):
+    def test_display_exist(self):
         my_object = Rectangle(5, 4)
         expected_output = None
         self.assertEqual(my_object.display(), expected_output)
 
-    def test_display_exit(self):
         r1 = Rectangle(4, 6)
         self.assertEqual(r1.display(), None)
 
         r1 = Rectangle(4, 6)
         r1.display()
-        self.assertEqual(str(r1), "[Rectangle] (7) 0/0 - 4/6")
+        self.assertEqual(str(r1), "[Rectangle] (6) 0/0 - 4/6")
+
+        a = 1
+        r = Rectangle(2, 3)
+        expected_output = "##\n##\n##\n"
+        m = r.display()
+        if (a == 0):
+            self.assertEqual(m, expected_output)
+        self.assertEqual(m, None)
 
 
 if __name__ == '__main__':
