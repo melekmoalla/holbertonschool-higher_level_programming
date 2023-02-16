@@ -11,6 +11,10 @@ import subprocess
 
 class TestRectangle(unittest.TestCase):
 
+    def test_display_test(self):
+        m = self.display()
+        self.assertEqual(m, m)
+
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, r1.id)
@@ -154,7 +158,6 @@ class TestRectangle(unittest.TestCase):
 
     def test_display_exist(self):
 
-        
         with self.assertRaises(TypeError) as e:
             Rectangle.display()
         self.assertEqual(str(e.exception), str(e.exception))
