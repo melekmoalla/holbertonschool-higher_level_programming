@@ -109,7 +109,8 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(Rectangle.save_to_file([]), None)
 
-        self.assertEqual(Rectangle.save_to_file([Rectangle(1, 2)]), None)
+        a = Rectangle.save_to_file([Rectangle(1, 2)])
+        self.assertEqual(a, None)
 
     def test_load_from_to_life(self):
         r61 = Rectangle(10, 7, 2, 8)
