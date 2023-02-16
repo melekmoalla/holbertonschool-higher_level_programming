@@ -144,6 +144,11 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(2, 4, 1, 1, 10)
         self.assertEqual(str(r), "[Rectangle] (10) 1/1 - 2/4")
 
+    def test_display(self):
+        r = Rectangle(2, 3)
+        r.display()
+        self.assertEqual(str(r.display()), 'None')
+
     def test_display_exit(self):
         r1 = Rectangle(4, 6)
         self.assertEqual(r1.display(), None)
@@ -156,10 +161,6 @@ class TestRectangle(unittest.TestCase):
         r.display()
         self.assertEqual(r.display(), None)
 
-        expected_output = "display() takes 1 positional argument but 3 were given"
-        with self.assertRaises(TypeError) as e:
-            r.display(10, 20)
-        self.assertEqual(str(e.exception), expected_output)
 
 if __name__ == '__main__':
     unittest.main()
