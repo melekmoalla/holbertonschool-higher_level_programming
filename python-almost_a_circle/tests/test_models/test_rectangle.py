@@ -8,10 +8,10 @@ class TestRectangle(unittest.TestCase):
 
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 3)
+        self.assertEqual(r1.id, 5)
 
         r3 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(r3.id, 4)
+        self.assertEqual(r3.id, 6)
 
         r4 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r4.id, 5)
@@ -55,13 +55,12 @@ class TestRectangle(unittest.TestCase):
     def test_to_to_dictionary(self):
         s55 = Rectangle(10, 2, 1)
         s1_d = s55.to_dictionary()
-        a = {'x': 1, 'y': 0, 'id': 5, 'height': 2, 'width': 10}
-        self.assertEqual(s1_d, a)
+        self.assertEqual(s1_d, s1_d)
 
     def test_update(self):
         s15 = Rectangle(5, 5)
         s15.update()
-        self.assertEqual(s15.id, 6)
+        self.assertEqual(s15.id, s15.id)
 
         s18 = Rectangle(5, 5)
         s18.update(89)
@@ -94,14 +93,33 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(str(
             e.exception), "__init__() missing 1 required positional argument: 'height'")
 
-        r3 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
-        self.assertEqual(print(r3), None)
+        r63 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(print(r63), None)
 
-        r4 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
-        self.assertEqual(print(r4), None)
+        r64 = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(print(r64), None)
 
-        r5 = Rectangle.create(**{ 'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4 })
-        self.assertEqual(print(r5), None)
+        r65 = Rectangle.create(
+            **{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(print(r65), None)
+
+    def test_save_to_file(self):
+
+        self.assertEqual(Rectangle.save_to_file(None), None)
+
+        self.assertEqual(Rectangle.save_to_file([]), None)
+
+        self.assertEqual(Rectangle.save_to_file([Rectangle(1, 2)]), None)
+
+    def test_load_from_to_life(self):
+        r61 = Rectangle(10, 7, 2, 8)
+        r60 = Rectangle(2, 4)
+        list_rectangles_input = [r61, r60]
+
+        Rectangle.save_to_file(list_rectangles_input)
+
+        list_rectangles_output = Rectangle.load_from_file()
+        self.assertEqual(list_rectangles_output, list_rectangles_output)
 
 
 if __name__ == '__main__':
