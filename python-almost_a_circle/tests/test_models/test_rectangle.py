@@ -16,30 +16,37 @@ class TestRectangle(unittest.TestCase):
         r4 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r4.id, 5)
 
-        r5 = Rectangle("1", 2)
-        self.assertEqual(r5.width, '1')
+        with self.assertRaises(TypeError) as e:
+            r5 = Rectangle("1", 2)
+        self.assertEqual(str(e.exception), "width must be an integer")
 
-        r6 = Rectangle(1, "2")
-        self.assertEqual(r6.height, '2')
+        with self.assertRaises(TypeError) as e:
+            r6 = Rectangle(1, "2")
+        self.assertEqual(str(e.exception), "height must be an integer")
 
-        r7 = Rectangle(1, 2, "3")
-        self.assertEqual(r7.x, '3')
+        with self.assertRaises(TypeError) as e:
+            r7 = Rectangle(1, 2, "3")
+        self.assertEqual(str(e.exception), "x must be an integer")
 
-        r8 = Rectangle(1, 2, 3, "4")
-        self.assertEqual(r8.y, '4')
+        with self.assertRaises(TypeError) as e:
+            r8 = Rectangle(1, 2, 3, "4")
+        self.assertEqual(str(e.exception), "y must be an integer")
 
-        r9 = Rectangle(-1, 2)
-        self.assertEqual(r9.width, -1)
+        with self.assertRaises(ValueError) as e:
+            r9 = Rectangle(-1, 2)
+        self.assertEqual(str(e.exception), "width must be > 0")
 
-        r10 = Rectangle(0, 2)
-        self.assertEqual(r10.width, 0)
+        with self.assertRaises(ValueError) as e:
+            r10 = Rectangle(0, 2)
+        self.assertEqual(str(e.exception), "width must be > 0")
 
-        r11 = Rectangle(1, 0)
-        self.assertEqual(r11.height, 0)
+        with self.assertRaises(ValueError) as e:
+            r11 = Rectangle(1, 0)
+        self.assertEqual(str(e.exception), "height must be > 0")
 
     def test_area(self):
         r12 = Rectangle(8, 7, 0, 0, 12)
-        r12.area(), 6
+        r12.area()
 
     def test_str(self):
         r13 = Rectangle(4, 6, 2, 1, 12)
@@ -48,13 +55,13 @@ class TestRectangle(unittest.TestCase):
     def test_to_to_dictionary(self):
         s55 = Rectangle(10, 2, 1)
         s1_d = s55.to_dictionary()
-        a = {'x': 1, 'y': 0, 'id': 12, 'height': 2, 'width': 10}
+        a = {'x': 1, 'y': 0, 'id': 5, 'height': 2, 'width': 10}
         self.assertEqual(s1_d, a)
 
     def test_update(self):
         s15 = Rectangle(5, 5)
         s15.update()
-        self.assertEqual(s15.id, 13)
+        self.assertEqual(s15.id, 6)
 
         s18 = Rectangle(5, 5)
         s18.update(89)

@@ -16,27 +16,33 @@ class Testsquare(unittest.TestCase):
         s3 = Square(1, 2, 3)
         self.assertEqual(s3.y, 3)
 
-        s4 = Square("1")
-        self.assertEqual(s4.width, '1')
+        with self.assertRaises(TypeError) as e:
+            s4 = Square("1")
+        self.assertEqual(str(e.exception), "height must be an integer")
 
-        s5 = Square(1, "2")
-        self.assertEqual(s5.x, '2')
+        with self.assertRaises(TypeError) as e:
+            s5 = Square(1, "2")
+        self.assertEqual(str(e.exception), "x must be an integer")
 
         s6 = Square(1, 2, 3, 4)
         self.assertEqual(s6.id, 4)
 
-        s7 = Square(-1)
-        self.assertEqual(s7.height, -1)
+        with self.assertRaises(ValueError) as e:
+            s7 = Square(-1)
+        self.assertEqual(str(e.exception), "height must be > 0")
 
-        s8 = Square(1, -2)
-        self.assertEqual(s8.x, -2)
+        with self.assertRaises(ValueError) as e:
+            s8 = Square(1, -2)
+        self.assertEqual(str(e.exception), "x must be >= 0")
 
-        s9 = Square(1, 2, -3)
-        self.assertEqual(s9.y, -3)
+        with self.assertRaises(ValueError) as e:
+            s9 = Square(1, 2, -3)
+        self.assertEqual(str(e.exception), "y must be >= 0")
 
-        s10 = Square(0)
-        self.assertEqual(s10.width, 0)
+        with self.assertRaises(ValueError) as e:
+            s10 = Square(0)
+        self.assertEqual(str(e.exception), "height must be > 0")
 
-        s11 = Square(1, 2, "3")
-        self.assertEqual(s11.y, '3')
-
+        with self.assertRaises(TypeError) as e:
+            s11 = Square(1, 2, "3")
+        self.assertEqual(str(e.exception), "y must be an integer")
