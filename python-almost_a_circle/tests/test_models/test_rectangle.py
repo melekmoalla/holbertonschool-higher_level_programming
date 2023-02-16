@@ -127,7 +127,7 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"x": 0, "y": 0, "id": 12, "height": 2, "width": 1}]')
+                f.read(), '[{"x": 0, "y": 0, "id": 13, "height": 2, "width": 1}]')
 
     def test_load_from_to_life(self):
         r61 = Rectangle(10, 7, 2, 8)
@@ -158,7 +158,7 @@ class TestRectangle(unittest.TestCase):
 
         r1 = Rectangle(4, 6)
         r1.display()
-        self.assertEqual(str(r1), "[Rectangle] (7) 0/0 - 4/6")
+        self.assertEqual(str(r1), "[Rectangle] (8) 0/0 - 4/6")
 
 
 if __name__ == '__main__':
