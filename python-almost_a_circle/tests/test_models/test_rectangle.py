@@ -156,8 +156,10 @@ class TestRectangle(unittest.TestCase):
         r.display()
         self.assertEqual(r.display(), None)
 
-        m = r.display()
-        self.assertEqual(m, None)
+        with self.assertRaises(TypeError)as e:
+            m = r.display(5)
+        self.assertEqual(
+            str(e.exception), "display() takes 1 positional argument but 2 were given")
 
 
 if __name__ == '__main__':
