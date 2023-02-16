@@ -149,8 +149,9 @@ class TestRectangle(unittest.TestCase):
 
     def test_display_method_exists(self):
         rect = Rectangle(2, 3, 1, 1, 5)
+        rect.display
         self.assertTrue(hasattr(rect, 'display'))
-        
+
     def test_display_exist(self):
 
         
