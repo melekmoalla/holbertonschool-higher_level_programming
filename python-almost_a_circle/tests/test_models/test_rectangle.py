@@ -124,7 +124,7 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"x": 0, "y": 0, "id": 9, "height": 2, "width": 1}]')
+                f.read(), '[{"x": 0, "y": 0, "id": 12, "height": 2, "width": 1}]')
 
     def test_load_from_to_life(self):
         r61 = Rectangle(10, 7, 2, 8)
@@ -144,6 +144,22 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(2, 4, 1, 1, 10)
         self.assertEqual(str(r), "[Rectangle] (10) 1/1 - 2/4")
 
+    def test_display_exit(self):
+        r1 = Rectangle(4, 6)
+        self.assertEqual(r1.display(), None)
+
+        r1 = Rectangle(4, 6)
+        r1.display()
+        self.assertEqual(str(r1), "[Rectangle] (6) 0/0 - 4/6")
+
+        r = Rectangle(2, 3)
+        r.display()
+        self.assertEqual(r.display(), None)
+
+        expected_output = "display() takes 1 positional argument but 3 were given"
+        with self.assertRaises(TypeError) as e:
+            r.display(10, 20)
+        self.assertEqual(str(e.exception), expected_output)
 
 if __name__ == '__main__':
     unittest.main()
