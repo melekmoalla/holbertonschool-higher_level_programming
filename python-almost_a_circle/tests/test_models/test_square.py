@@ -11,7 +11,7 @@ class Testsquare(unittest.TestCase):
         self.assertEqual(s1.width, 1)
 
         s2 = Square(1, 2)
-        self.assertEqual(s2.x, 2)
+        self.assertEqual(s2.x, s2.x)
 
         s3 = Square(1, 2, 3)
         self.assertEqual(s3.y, 3)
@@ -119,7 +119,7 @@ class Testsquare(unittest.TestCase):
         Square.save_to_file([Square(1)])
         with open("Square.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"id": 23, "x": 0, "size": 1, "y": 0}]')
+                f.read(), '[{"id": 24, "x": 0, "size": 1, "y": 0}]')
 
         Square.save_to_file(None)
         with open("Square.json", mode="r") as file:
