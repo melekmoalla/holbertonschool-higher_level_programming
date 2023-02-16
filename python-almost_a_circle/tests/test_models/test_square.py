@@ -104,16 +104,22 @@ class Testsquare(unittest.TestCase):
         s31 = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
         self.assertEqual(s31, s31)
 
-    def test_save_to_file_square(self):
-
+    def test_save_to_file_square_none(self):
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
         Square.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
 
+    def test_save_to_file_square(self):
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
         Square.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
 
+        s1 = Square(5)
+        s2 = Square(7, 9, 1)
         Square.save_to_file([Square(1)])
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
