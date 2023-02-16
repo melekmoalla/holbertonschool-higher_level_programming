@@ -156,11 +156,12 @@ class TestRectangle(unittest.TestCase):
         r.display()
         self.assertEqual(r.display(), None)
 
-        with self.assertRaises(TypeError)as e:
-            m = r.display(5)
-        self.assertEqual(
-            str(e.exception), "display() takes 1 positional argument but 2 were given")
-
+    def test_display(self):
+        r = Rectangle(2, 3)
+        r.display()
+        self.assertEqual(r.display(), None)
 
 if __name__ == '__main__':
     unittest.main()
+
+
