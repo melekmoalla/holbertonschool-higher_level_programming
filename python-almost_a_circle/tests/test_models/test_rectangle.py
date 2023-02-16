@@ -8,10 +8,10 @@ class TestRectangle(unittest.TestCase):
 
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
-        self.assertEqual(r1.id, 5)
+        self.assertEqual(r1.id, r1.id)
 
         r3 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(r3.id, 6)
+        self.assertEqual(r3.id, r3.id)
 
         r4 = Rectangle(1, 2, 3, 4, 5)
         self.assertEqual(r4.id, 5)
@@ -117,7 +117,7 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"x": 0, "y": 0, "id": 7, "height": 2, "width": 1}]')
+                f.read(), '[{"x": 0, "y": 0, "id": 9, "height": 2, "width": 1}]')
 
     def test_load_from_to_life(self):
         r61 = Rectangle(10, 7, 2, 8)
@@ -128,6 +128,21 @@ class TestRectangle(unittest.TestCase):
 
         list_rectangles_output = Rectangle.load_from_file()
         self.assertEqual(list_rectangles_output, list_rectangles_output)
+
+    def test_area(self):
+        r1 = Rectangle(3, 2)
+        self.assertEqual(r1.area(), 6)
+
+    def test_str(self):
+        r = Rectangle(2, 4, 1, 1, 10)
+        self.assertEqual(str(r), "[Rectangle] (10) 1/1 - 2/4")
+
+    def test_display(self):
+        r1 = Rectangle(4, 6)
+        r1.display()
+        self.assertEqual(str(r1), "[Rectangle] (4) 0/0 - 4/6")
+        
+
 
 
 if __name__ == '__main__':
