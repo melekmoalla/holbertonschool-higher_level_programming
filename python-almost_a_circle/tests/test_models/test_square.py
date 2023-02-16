@@ -18,7 +18,7 @@ class Testsquare(unittest.TestCase):
 
         with self.assertRaises(TypeError) as e:
             s4 = Square("1")
-        self.assertEqual(str(e.exception), "height must be an integer")
+        self.assertEqual(str(e.exception), "width must be an integer")
 
         with self.assertRaises(TypeError) as e:
             s5 = Square(1, "2")
@@ -29,7 +29,7 @@ class Testsquare(unittest.TestCase):
 
         with self.assertRaises(ValueError) as e:
             s7 = Square(-1)
-        self.assertEqual(str(e.exception), "height must be > 0")
+        self.assertEqual(str(e.exception), "width must be > 0")
 
         with self.assertRaises(ValueError) as e:
             s8 = Square(1, -2)
@@ -41,7 +41,7 @@ class Testsquare(unittest.TestCase):
 
         with self.assertRaises(ValueError) as e:
             s10 = Square(0)
-        self.assertEqual(str(e.exception), "height must be > 0")
+        self.assertEqual(str(e.exception), "width must be > 0")
 
         with self.assertRaises(TypeError) as e:
             s11 = Square(1, 2, "3")
