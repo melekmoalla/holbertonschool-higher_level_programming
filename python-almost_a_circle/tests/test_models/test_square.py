@@ -104,25 +104,15 @@ class Testsquare(unittest.TestCase):
         s31 = Square.create(**{'id': 89, 'size': 1, 'x': 2, 'y': 3})
         self.assertEqual(s31, s31)
 
-    def test_save_to_file_square_none(self):
-        s1 = Square(5)
-        s2 = Square(7, 9, 1)
-        Square.save_to_file(None)
-        with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), '[]')
-
     def test_save_to_file_square(self):
-        s1 = Square(5)
-        s2 = Square(7, 9, 1)
-        Square.save_to_file([])
-        with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), '[]')
 
-        s1 = Square(5)
-        s2 = Square(7, 9, 1)
+        Square.save_to_file([])
+        with open("Rectangle.json", "r") as fil:
+            self.assertEqual(fil.read(), '[]')
+
         Square.save_to_file([Square(1)])
-        with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), '[]')
+        with open("Rectangle.json", "r") as f:
+            self.assertEqual(f.read(), '[]')
 
     def test_load_from_file(self):
         s1 = Square(5)
@@ -131,3 +121,17 @@ class Testsquare(unittest.TestCase):
         Square.save_to_file(list_squares_input)
         list_squares_output = Square.load_from_file()
         self.assertEqual(list_squares_output, list_squares_output)
+
+    def test_area(self):
+        s = Square(5)
+        self.assertEqual(s.area(), 25)
+
+    def test_str_method(self):
+        s1 = Square(4, 2, 1, 12)
+        expected_output = "[Square] (12) 2/1 - 4"
+        self.assertEqual(str(s1), expected_output)
+
+    def test_to_dictionary(self):
+        s1 = Square(10, 2, 1, 9)
+        expected_output = {'id': 9, 'size': 10, 'x': 2, 'y': 1}
+        self.assertDictEqual(s1.to_dictionary(), expected_output)
