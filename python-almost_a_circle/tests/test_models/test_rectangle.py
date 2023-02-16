@@ -149,10 +149,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_display_exist(self):
 
-        with self.assertRaises(AttributeError) as e:
-            self.y *= 2
-            self.x *= 2
-            super().display()
+        with self.assertRaises(TypeError) as e:
+            Rectangle.display()
         self.assertEqual(str(e.exception), str(e.exception))
 
         r1 = Rectangle(4, 6)
