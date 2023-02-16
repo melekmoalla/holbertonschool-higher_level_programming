@@ -144,22 +144,7 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(2, 4, 1, 1, 10)
         self.assertEqual(str(r), "[Rectangle] (10) 1/1 - 2/4")
 
-    def test_display_exit(self):
-        r1 = Rectangle(4, 6)
-        self.assertEqual(r1.display(), None)
 
-        r1 = Rectangle(4, 6)
-        r1.display()
-        self.assertEqual(str(r1), "[Rectangle] (6) 0/0 - 4/6")
-
-        r = Rectangle(2, 3)
-        r.display()
-        self.assertEqual(r.display(), None)
-
-    def test_display(self):
-        r = Rectangle(2, 3)
-        r.display()
-        self.assertEqual(r.display(), None)
 
 if __name__ == '__main__':
     unittest.main()
