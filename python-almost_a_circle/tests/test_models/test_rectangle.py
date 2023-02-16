@@ -6,6 +6,11 @@ from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
 
+    def test_display(self):
+        r = Rectangle(2, 3)
+        r.display()
+        self.assertEqual(r.display(), None)
+
     def test_new_Rectangle(self):
         r1 = Rectangle(10, 2)
         self.assertEqual(r1.id, r1.id)
@@ -117,7 +122,7 @@ class TestRectangle(unittest.TestCase):
         Rectangle.save_to_file([Rectangle(1, 2)])
         with open("Rectangle.json", "r") as f:
             self.assertEqual(
-                f.read(), '[{"x": 0, "y": 0, "id": 11, "height": 2, "width": 1}]')
+                f.read(), '[{"x": 0, "y": 0, "id": 12, "height": 2, "width": 1}]')
 
     def test_load_from_to_life(self):
         r61 = Rectangle(10, 7, 2, 8)
@@ -145,7 +150,6 @@ class TestRectangle(unittest.TestCase):
         r1.display()
         self.assertEqual(str(r1), "[Rectangle] (6) 0/0 - 4/6")
 
-    def test_display(self):
         r = Rectangle(2, 3)
         r.display()
         self.assertEqual(r.display(), None)
