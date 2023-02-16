@@ -2,7 +2,8 @@
 
 import unittest
 from models.rectangle import Rectangle
-
+import io
+import sys
 
 class TestRectangle(unittest.TestCase):
 
@@ -153,6 +154,14 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(2, 3)
         r.display()
         self.assertEqual(r.display(), None)
+
+    def test_display(self):
+        r = Rectangle(2, 3)
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+        r.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(captured_output.getvalue(), "##\n##\n##\n")
 
 
 if __name__ == '__main__':
