@@ -152,9 +152,8 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(m, None)
 
     def test_display_method_exists(self):
-        rect = Rectangle(2, 3, 1, 1, 5)
-        rect.display
-        self.assertTrue(hasattr(rect, 'display'))
+        m = issubclass(Rectangle, Rectangle.display)
+        self.assertTrue(m, m)
 
     def test_display_exist(self):
 
