@@ -1,3 +1,2 @@
-# SHOW DATABASES
-
+/* show databeses */
 SHOW DATABASES;
