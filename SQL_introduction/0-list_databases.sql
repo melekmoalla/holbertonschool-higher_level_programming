@@ -1,2 +1,2 @@
-/* show databeses */
+-- show databeses 
 SHOW DATABASES;
