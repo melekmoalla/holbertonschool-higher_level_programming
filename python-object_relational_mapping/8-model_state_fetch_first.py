@@ -19,13 +19,12 @@ if __name__ == "__main__":
         db=database)
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states LIMIT 1")
 
     result = cur.fetchall()
     if (result is None):
         print()
-    for row in result:
-        print(row[0], end="")
-        print(": ", end="")
-        print(row[1])
-        break
+
+    result = cur.fetchall()
+    print(result[0][0],end=": ")
+    print(result[0][1])
