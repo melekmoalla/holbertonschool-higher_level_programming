@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+from model_state import Base, State
+import sqlalchemy
+import MySQLdb
+import sys
 
 """
 Write a script that lists all State objects from the database hbtn_0e_6_usa
@@ -14,10 +18,7 @@ The results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
 
-from model_state import Base, State
-import sqlalchemy
-import MySQLdb
-import sys
+
 if __name__ == "__main__":
 
     """
