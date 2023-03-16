@@ -13,6 +13,7 @@ The results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
 from model_state import Base, State
+import sqlalchemy
 import MySQLdb
 import sys
 
