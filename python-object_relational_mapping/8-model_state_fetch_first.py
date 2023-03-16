@@ -24,7 +24,7 @@ if __name__ == "__main__":
     result = cur.fetchall()
     print(result[0][0], end=": ")
     print(result[0][1])
-    if (result is None):
+    if (result == None):
         print("Nothing")
 
     a = 0
