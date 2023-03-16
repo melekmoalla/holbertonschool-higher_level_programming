@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """
-list list 
+Write a script that lists all State objects from the database hbtn_0e_6_usa 
 """
-# mmmm
-from model_state import Base, State
+
+
 from sqlalchemy import create_engine
 
 import MySQLdb
