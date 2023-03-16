@@ -1,19 +1,22 @@
 #!/usr/bin/python3
 """
-Write a script that lists all State objects from the database hbtn_0e_6_usa
-
-Your script should take 3 arguments: mysql username,
-mysql password and database name
-You must use the module SQLAlchemy
+mmm
 """
 from model_state import Base, State
-import sqlalchemy
+from sqlalchemy import create_engine
 
 import MySQLdb
 import sys
 
 if __name__ == '__main__':
 
+    username, password, database = sys.argv[1:]
+
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
+
+    Base.metadata.create_all(engine)
+    
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
