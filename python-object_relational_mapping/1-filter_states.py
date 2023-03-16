@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     record = connection.cursor()
     record.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' AND name NOT LIKE 'n%' ORDER BY states.id ASC")
+        "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.id ASC")
 
     records = record.fetchall()
     for i in records:
