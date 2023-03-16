@@ -19,6 +19,10 @@ if __name__ == "__main__":
         db=database)
 
     cur = db.cursor()
+    a = 0
+    if a == 1:
+        Product.query.filter_by(name='apple').one_or_none()
+        
     cur.execute("SELECT * FROM states LIMIT 1")
 
     result = cur.fetchall()
@@ -26,5 +30,5 @@ if __name__ == "__main__":
         print()
 
     result = cur.fetchall()
-    print(result[0][0],end=": ")
+    print(result[0][0], end=": ")
     print(result[0][1])
