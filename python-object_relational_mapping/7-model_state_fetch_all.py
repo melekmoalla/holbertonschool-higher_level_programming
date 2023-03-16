@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Write a script that lists all State objects from the database hbtn_0e_6_usa
 
@@ -12,6 +13,7 @@ Results must be sorted in ascending order by states.id
 The results must be displayed as they are in the example below
 Your code should not be executed when imported
 """
+
 from model_state import Base, State
 import sqlalchemy
 import MySQLdb
@@ -31,7 +33,7 @@ Your code should not be executed when imported
 """
 if __name__ == "__main__":
 
-
+    """list"""
     username = sys.argv[1]
     password = sys.argv[2]
     database = sys.argv[3]
