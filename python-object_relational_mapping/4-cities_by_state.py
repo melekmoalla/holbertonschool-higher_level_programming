@@ -25,18 +25,15 @@ if __name__ == "__main__":
         host='localhost', port=3306, database=data, user=user, password=pas)
     record = connection.cursor()
     record2 = connection.cursor()
-    record.execute("SELECT * FROM cities ORDER BY cities.id ASC")
-    record2.execute("SELECT id, name FROM states")
+    record.execute("SELECT * FROM cities JOIN states ORDER BY cities.id ASC")
 
     records = record.fetchall()
-    records2 = record2.fetchall()
 
     for i in records:
-        tu = []
-        tu.append(i[0])
-        tu.append(i[2])
-        for m in records2:
-            if i[1] == m[0]:
-                tu.append(m[1])
-        p = tuple(tu)
-        print(p)
+        if (i[1] == i[3]):
+            t = []
+            t.append(i[0])
+            t.append(i[2])
+            t.append(i[4])
+            rev = tuple(t)
+            print(rev)
