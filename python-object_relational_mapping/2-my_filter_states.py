@@ -22,4 +22,4 @@ if __name__ == "__main__":
     recordS = record.fetchall()
     for i in recordS:
         if (i[1] == name):
-            print(i)
+            print(format(i))
