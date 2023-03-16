@@ -8,13 +8,9 @@ from sqlalchemy import create_engine
 
 import MySQLdb
 import sys
-"""
-list list 
-"""
+
 if __name__ == "__main__":
-    """
-    list list 
-    """
+
     username, password, database = sys.argv[1:]
 
     engine = create_engine(
