@@ -26,7 +26,7 @@ if __name__ == "__main__":
         print(result[0][0], end=": ")
         print(result[0][1])
     else:
-        print("nothing")
+        print("Nothing")
 
     a = 0
     if a == 1:
