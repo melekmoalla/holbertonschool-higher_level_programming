@@ -20,5 +20,5 @@ if __name__ == "__main__":
 
     records = record.fetchall()
     for i in records:
-        if (i[2][0] == 'N'):
+        if (i[1][0] == 'N'):
             print(i)
