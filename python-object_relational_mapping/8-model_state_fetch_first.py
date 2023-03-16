@@ -22,7 +22,7 @@ if __name__ == "__main__":
     cur.execute("SELECT * FROM states LIMIT 1")
 
     result = cur.fetchall()
-    if (result is None):
+    if (result[0] == ""):
         print("Nothing")
     print(result[0][0], end=": ")
     print(result[0][1])
