@@ -1,22 +1,10 @@
 #!/usr/bin/python3
-"""
-Write a script that lists all State objects from the database hbtn_0e_6_usa 
-"""
-
-
-from sqlalchemy import create_engine
-
+"""Lists all states from the database hbtn_0e_0_usa"""
+import sqlalchemy
 import MySQLdb
 import sys
 
 if __name__ == "__main__":
-
-    username, password, database = sys.argv[1:]
-
-    engine = create_engine(
-        'mysql+mysqldb://{}:{}@localhost:3306/{}'.format(username, password, database))
-
-    Base.metadata.create_all(engine)
 
     username = sys.argv[1]
     password = sys.argv[2]
@@ -28,12 +16,12 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database)
-
+    
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
 
-    result = cur.fetchall()
+    result=cur.fetchall()
     for row in result:
-        print(row[0], end="")
-        print(": ", end="")
+        print(row[0],end ="")
+        print(": ",end ="")
         print(row[1])
