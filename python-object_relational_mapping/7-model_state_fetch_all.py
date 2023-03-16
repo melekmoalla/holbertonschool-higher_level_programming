@@ -16,12 +16,12 @@ if __name__ == "__main__":
         user=username,
         passwd=password,
         db=database)
-    
+
     cur = db.cursor()
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
 
-    result=cur.fetchall()
+    result = cur.fetchall()
     for row in result:
-        print(row[0],end ="")
-        print(": ",end ="")
+        print(row[0], end="")
+        print(": ", end="")
         print(row[1])
