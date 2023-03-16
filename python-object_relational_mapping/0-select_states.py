@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 Write a script that lists all states from the database hbtn_0e_0_usa:
 
@@ -12,16 +13,18 @@ Your code should not be executed when imported
 """
 import MySQLdb
 
-db = MySQLdb.connect(
-    host="localhost",
-    port=3306,
-    user='root',
-    passwd='root',
-    db='hbtn_0e_0_usa')
+if __name__ == "__main__":
 
-cur = db.cursor()
+    db = MySQLdb.connect(
+        host="localhost",
+        port=3306,
+        user='root',
+        passwd='root',
+        db='hbtn_0e_0_usa')
 
-cur.execute("SELECT * FROM states ORDER BY id ASC")
-records = cur.fetchall()
-for i in records:
-    print(i)
+    cur = db.cursor()
+
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    records = cur.fetchall()
+    for i in records:
+        print(i)
