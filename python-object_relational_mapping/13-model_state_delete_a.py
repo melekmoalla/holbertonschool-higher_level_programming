@@ -1,27 +1,20 @@
 #!/usr/bin/python3
-"""Write a script that deletes all State objects
-with a name containing
-the letter a from the database hbtn_0e_6_usa
 """
-import sqlalchemy
-import MySQLdb
-import sys
-if __name__ == "__main__":
-    username = sys.argv[1]
-    password = sys.argv[2]
-    database = sys.argv[3]
+deletes all State objects from the database that contain 'a'
+using SQLAlchemy and importing State and Base from model_state
+"""
+from sys import argv
+from model_state import Base, State
 
-    db = MySQLdb.connect(
-        host="localhost",
-        port=3306,
-        user=username,
-        passwd=password,
-        db=database)
-    cur = db.cursor()
-    cur.execute("SELECT * FROM states")
-    result = cur.fetchall()
-    for i in result:
-        m = "'"+i[1]+"'"
-        if ("a" in i[1]):
-            cur.execute(f"DELETE FROM states  WHERE states.name = {m} AND states.id = {m} ")
-            db.commit()
+from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
+
+engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
+Base.metadata.create_all(engine)
+Session = sessionmaker(bind=engine)
+session = Session()
+
+for state in session.query(State).filter(State.name.like('%a%')).all():
+    session.delete(state)     
+    
+session.commit()
