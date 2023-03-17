@@ -3,12 +3,10 @@
  Write a script that deletes all State objects with a
  name containing the letter a from the database hbtn_0e_6_usa
 """
-import MySQLdb
 from sqlalchemy import Column, Integer, String, create_engine
-from sqlalchemy.ext.declarative import declarative_base
+from model_state import Base
 import sys
 
-Base = declarative_base()
 class state(Base):
     """
     Write a script that deletes all State objects with a
