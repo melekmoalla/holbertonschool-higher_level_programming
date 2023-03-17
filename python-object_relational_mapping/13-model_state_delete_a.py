@@ -25,4 +25,3 @@ if __name__ == "__main__":
             m = i[0]
             cur.execute(f"DELETE FROM states  WHERE states.id = {m}")
             db.commit()
-    print(result)
