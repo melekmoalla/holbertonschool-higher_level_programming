@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-
+"""
+Next, write a script 14-model_city_fetch_by_state.py that
+prints all City objects from the database hbtn_0e_14_usa:
+"""
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
@@ -10,7 +13,8 @@ if __name__ == "__main__":
     user = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    engine = create_engine(f'mysql+mysqldb://{user}:{password}@localhost:3306/{db_name}')
+    engine = create_engine(
+        f'mysql+mysqldb://{user}:{password}@localhost:3306/{db_name}')
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
