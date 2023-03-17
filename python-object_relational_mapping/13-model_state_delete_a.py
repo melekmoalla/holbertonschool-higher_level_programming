@@ -23,6 +23,5 @@ if __name__ == "__main__":
     for i in result:
         m = "'"+i[1]+"'"
         if ("a" in i[1]):
-            print(str(m))
-            cur.execute(f"DELETE FROM states  WHERE states.name = {m}")
+            cur.execute(f"DELETE FROM states  WHERE states.name = {m} AND states.id = {m} ")
             db.commit()
