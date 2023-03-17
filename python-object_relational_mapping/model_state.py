@@ -1,13 +1,15 @@
 #!/usr/bin/python3
 """
- Write a script that deletes all State objects with a
- name containing the letter a from the database hbtn_0e_6_usa
+defines State class that inherits from Base = declarative_base()
+and links to MySQL table states using SQLAlchemy
 """
-from sqlalchemy import Column, Integer, String, create_engine
-from model_state import Base
-import sys
 
+from sqlalchemy import Column, Integer, String
+from sqlalchemy.ext.declarative import declarative_base
+
+Base = declarative_base()
 class state(Base):
+    import sys
     """
     Write a script that deletes all State objects with a
     name containing the letter a from the database hbtn_0e_6_usa
