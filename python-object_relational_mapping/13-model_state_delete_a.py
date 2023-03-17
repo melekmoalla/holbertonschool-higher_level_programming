@@ -12,7 +12,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(user, password, db_name), pool_pre_ping=True)
+                           .format(user, password, db_name))
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
@@ -22,4 +22,4 @@ if __name__ == "__main__":
             session.delete(state)
 
     session.commit()
-    session.close()
+
