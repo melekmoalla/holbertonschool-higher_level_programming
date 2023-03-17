@@ -18,7 +18,4 @@ class state(Base):
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
 
-engine = create_engine('mysql+pymysql://{}:{}@localhost:3306/{}'
-                       .format(sys.argv[1], sys.argv[2], sys.argv[3]))
 
-Base.metadata.create_all(engine)
