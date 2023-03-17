@@ -22,6 +22,6 @@ if __name__ == "__main__":
     result = cur.fetchall()
     for i in result:
         if ('a' in i[1]):
-            m = i[0]
-            cur.execute(f"DELETE FROM states  WHERE states.id = {m}")
+            m = i[1]
+            cur.execute(f"DELETE FROM states  WHERE states.name = {m}")
             db.commit()
