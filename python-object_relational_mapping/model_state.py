@@ -1,15 +1,17 @@
 #!/usr/bin/python3
 """
-defines State class that inherits from Base = declarative_base()
-and links to MySQL table states using SQLAlchemy
+ Write a script that deletes all State objects with a
+ name containing the letter a from the database hbtn_0e_6_usa
 """
 
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.ext.declarative import declarative_base
+import sys
 
 Base = declarative_base()
-class state(Base):
-    import sys
+
+
+class State(Base):
     """
     Write a script that deletes all State objects with a
     name containing the letter a from the database hbtn_0e_6_usa
@@ -19,3 +21,9 @@ class state(Base):
     name = Column(String(128), nullable=False)
 
 
+# Create the engine and connect to the MySQL server
+engine = create_engine('mysql+pymysql://{}:{}@localhost:3306/{}'
+                       .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+
+# Create the table if it does not exist
+Base.metadata.create_all(engine)
