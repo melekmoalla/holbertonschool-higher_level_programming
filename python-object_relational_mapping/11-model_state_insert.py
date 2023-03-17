@@ -15,7 +15,7 @@ if __name__ == "__main__":
         passwd=password,
         db=database)
     cur = db.cursor()
-    cur.execute("INSERT INTO states (id,name) VALUES (6,'Louisiana')")
+    cur.execute("INSERT INTO states (name) VALUES ('Louisiana')")
     db.commit()
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     result = cur.fetchall()
