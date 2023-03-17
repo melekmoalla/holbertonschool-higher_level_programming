@@ -18,7 +18,7 @@ if __name__ == "__main__":
         passwd=password,
         db=database)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states")
     result = cur.fetchall()
     for i in result:
         if ('a' in i[1]):
