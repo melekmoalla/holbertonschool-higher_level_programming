@@ -22,7 +22,7 @@ if __name__ == "__main__":
     result = cur.fetchall()
     for i in result:
         m = "'"+i[1]+"'"
-        if ('a' in i[1]):
+        if ("a" in i[1]):
             print(str(m))
             cur.execute(f"DELETE FROM states  WHERE states.name = {m}")
             db.commit()
