@@ -22,4 +22,4 @@ if __name__ == "__main__":
     for instante in session.query(City).order_by(City.id):
         for state in session.query(State):
             if (instante.state_id == state.id):
-                print(f"{state.name}: ({instante.id}) instante.name}")
+                print(f"{state.name}: ({instante.id}) {instante.name}")
