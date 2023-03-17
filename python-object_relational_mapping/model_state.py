@@ -21,9 +21,3 @@ class State(Base):
     name = Column(String(128), nullable=False)
 
 
-# Create the engine and connect to the MySQL server
-engine = create_engine('mysql+pymysql://{}:{}@localhost:3306/{}'
-                       .format(sys.argv[1], sys.argv[2], sys.argv[3]))
-
-# Create the table if it does not exist
-Base.metadata.create_all(engine)
