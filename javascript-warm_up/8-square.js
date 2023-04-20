@@ -4,7 +4,7 @@ const num = process.argv;
 let text = '';
 
 if (isNaN(num[2])) {
-  console.log('Missing number of occurrences');
+  console.log('Missing size');
 } else {
   for (let o = 0; o < num[2]; o++) {
     text += 'X';
