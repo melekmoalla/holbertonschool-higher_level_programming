@@ -4,5 +4,8 @@ exports.nbOccurences = function (list, searchElement){
     for (const num of list) {
         counts[num] = counts[num] ? counts[num] + 1 : 1;
       }
+    if (counts[searchElement] === undefined){
+        return 0
+    }
     return counts[searchElement]
 }
