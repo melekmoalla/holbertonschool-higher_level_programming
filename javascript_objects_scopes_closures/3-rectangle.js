@@ -1,17 +1,17 @@
 #!/usr/bin/node
 class Rectangle {
-  constructor (w, h) {
-    if (isNaN(h) || isNaN(w) || h <= 0 || w <= 0) {
+  constructor (weight, height) {
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
       // Empty object
     } else {
-      this.w = w;
-      this.h = h;
+      this.weight = weight;
+      this.height = height;
     }
   }
 
   print () {
-    for (let i = 0; i < this.h; i++) {
-      for (let a = 0; a < this.w; a++) {
+    for (let i = 0; i < this.height; i++) {
+      for (let a = 0; a < this.weight; a++) {
         process.stdout.write('X');
       }
       process.stdout.write('\n');
