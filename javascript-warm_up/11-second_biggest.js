@@ -1,8 +1,11 @@
 #!/usr/bin/node
-const a = process.argv[2];
-
-if (isNaN(a) || a === 1) {
-  console.log(0);
-} else {
-  console.log(a);
+const a = process.argv;
+let p = 0;
+let m = 0;
+for (let i = 2; i < a.length; i++) {
+  if (p < a[i]) {
+    m = p;
+    p = a[i];
+  }
 }
+console.log(m);
