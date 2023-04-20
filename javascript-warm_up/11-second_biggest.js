@@ -6,7 +6,6 @@ for (let i = 2; i < a.length; i++) {
   if (p < parseInt(a[i])) {
     m = p;
     p = a[i];
-    console.log(m);
   }
 }
 console.log(m);
