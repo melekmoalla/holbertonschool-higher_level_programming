@@ -6,4 +6,8 @@ for (let i = 2; i < a.length; i++) {
     p = a[i];
   }
 }
-console.log(p -1);
+if (p - 1 === -1) {
+  console.log(0);
+} else {
+  console.log(p - 1);
+}
