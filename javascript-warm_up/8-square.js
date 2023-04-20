@@ -7,7 +7,7 @@ if (isNaN(num[2])) {
   console.log('Missing number of occurrences');
 } else {
   for (let o = 0; o < num[2]; o++) {
-    text += 'x';
+    text += 'X';
   }
   for (let i = 0; i < num[2]; i++) {
     console.log(text);
