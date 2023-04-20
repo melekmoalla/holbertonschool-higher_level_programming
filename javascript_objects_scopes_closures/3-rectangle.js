@@ -4,7 +4,7 @@ class Rectangle {
     if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
       // Empty object
     } else {
-      this.wight = weight;
+      this.width = weight;
       this.height = height;
     }
   }
