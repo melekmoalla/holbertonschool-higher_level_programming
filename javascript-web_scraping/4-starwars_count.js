@@ -1,17 +1,15 @@
 #!/usr/bin/node
 const movie = process.argv[2];
-
 const request = require('request');
 let m2;
 request(movie, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
-    const m1 = movie.split('/');
-    if (m1[2] === `http://swapi.co/api/people/18/`) {
-      m2 = `http://swapi.co/api/people/18/`;
+    if (movie === 'https://swapi-api.hbtn.io/api/films') {
+      m2 = 'https://swapi-api.hbtn.io/api/people/18/';
     } else {
-      m2 = `https://swapi-api.hbtn.io/api/people/18/`;
+      m2 = 'http://swapi.co/api/people/18/';
     }
     const movie5 = JSON.parse(body).results;
     let coun = 0;
