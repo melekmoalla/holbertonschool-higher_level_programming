@@ -1,11 +1,11 @@
 #!/usr/bin/node
 
 const request = require('request');
-const numberid = process.argv[2];
+const n = process.argv[2];
 
-const url = `https://swapi-api.hbtn.io/api/films/${numberid}`;
+const url = `https://swapi-api.hbtn.io/api/films/${n}`;
 
-request(url, (error, body) => {
+request(url, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
