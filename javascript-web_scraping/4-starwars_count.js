@@ -3,10 +3,9 @@
 const movie = process.argv[2];
 
 const request = require('request');
-
-const m = movie.slice(0, 30);
-const movietru = m + 'people/18';
-request(movietru, (error, response, body) => {
+const m1 = movie.split('/');
+const m = `https://${m1[2]}/api/people/18`;
+request(m, (error, response, body) => {
   if (error) {
     console.error(error);
   } else {
