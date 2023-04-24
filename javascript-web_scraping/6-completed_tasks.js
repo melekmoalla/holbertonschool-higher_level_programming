@@ -9,10 +9,10 @@ request(movie, (error, response, body) => {
     const li = {};
     const m = JSON.parse(body);
     for (let i = 0; i < m.length; i++) {
-      if (isNaN(li[m[i].userId])) {
-        li[m[i].userId] = 0;
-      }
       if (m[i].completed === true) {
+        if (isNaN(li[m[i].userId])) {
+          li[m[i].userId] = 0;
+        }
         li[m[i].userId]++;
       }
     }
