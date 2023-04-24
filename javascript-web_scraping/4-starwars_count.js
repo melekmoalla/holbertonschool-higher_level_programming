@@ -11,7 +11,7 @@ request(movie, (error, response, body) => {
     let coun = 0;
     for (let i = 0; i < movie5.length; i++) {
       const p = movie5[i].characters;
-      if (p.includes('https://swapi-api.hbtn.io/api/people/18/')) {
+      if (p.includes('http://swapi.co/api/people/18/')) {
         coun++;
       }
     }
